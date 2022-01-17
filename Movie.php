@@ -4,17 +4,15 @@ class Movie{
   public $title;
   public $genre;
   public $year;
+  public $duration;
   public $cast;
   public $movie_director;
   public $description;
   public $reviews;
 
-  function __construct($_title, $_genre, $_year, $_reviews)
+  function __construct($_title)
   {
     $this->title = $_title;
-    $this->genre = $_genre;
-    $this->year = $_year;
-    $this->reviews = $_reviews; 
   }
 
   public function getReviews(){
@@ -27,7 +25,7 @@ class Movie{
     return $stringReviews;
   }
 
-  public function getExceptedDescription($length = 20) {
+  public function getExceptedDescription($length = 100) {
     return substr($this->description, 0, $length) . "...";
   }
 }
